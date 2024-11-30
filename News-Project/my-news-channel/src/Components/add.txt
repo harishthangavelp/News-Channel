@@ -1,0 +1,514 @@
+const NewsItem = ({title, description, src, url}) => {
+  return (
+    <div className="card bg-dark text-light mb-3 d-inline-block my-3 mx-3 px-2 py-2" style={{maxWidth:'345px'}}>
+  <img src={src} style={{height:'260px', width:'325px'}} className="card-img-top" alt="..."/>
+  <div className="card-body">
+    <h5 className="card-title">{title}</h5>
+    <p className="card-text">{description?description:"Read this for further description"}</p>
+    <a href={url} className="btn btn-primary">Read More</a>
+  </div>
+</div>
+  )
+}
+
+export default NewsItem
+
+//1               Button Filter
+// import React from 'react';
+// import '../Components/Data.css';
+// import { useState } from 'react';
+// import newsData from '../Components/newsDetails.json';
+
+// function Data() {
+//   // State to manage the filtered news data
+//   const [category, setCategory] = useState(newsData);
+
+//   // Function to filter the news based on the selected category
+//   const sources = (e) => {
+//     const word = e.target.value;
+
+//     if(word === "all"){
+//       setCategory(newsData)
+//     }
+//     else if(word === "breaking") {
+//         const filtered = newsData.filter(item=>item.kind === "breaking");
+//         setCategory(filtered)
+//     }
+//     else if(word === "cinema") {
+//       const filtered = newsData.filter(item=>item.kind === "cinema");
+//       setCategory(filtered)
+//     }
+//   };
+
+//   return (
+//     <>
+//       <section>
+//         <div>
+//           <h2>Today News</h2>
+//           <div>
+//             <button value="all" onClick={sources}>All News</button>
+//             <button value="breaking" onClick={sources}>Breaking News</button>
+//             <button value="cinema" onClick={sources}>Cinema News</button>
+//           </div>
+//         </div>
+//       </section>
+    
+//       <div className='card-container'>
+//         {category.map((post) => ( // Map over the filtered news category
+//           <div className='homecard' key={post.id}>
+//             <h5 className="hometitle">{post.title}</h5>
+//             <img src={post.img} style={{ objectFit: 'cover', width: '100%' }} width="384px" height="240px" alt={post.title} />
+//             <p>{post.description}</p>
+//             <a href="#">View</a>
+//           </div>
+//         ))}
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Data;
+
+//2               Option Select Less
+// src/Components/Data.jsx
+import React, { useState } from 'react';
+import RouteLink from './RouteLink';
+import { Link } from 'react-router-dom';  // Add Link import for navigation
+import newsData from '../Components/newsDetails.json';
+import '../Components/Data.css';
+
+function Data() {
+  const [category, setCategory] = useState(newsData);
+
+  const handleFilterChange = (e) => {
+    const word = e.target.value;
+
+    if (word === "all") {
+      setCategory(newsData);
+    } else {
+      const filtered = newsData.filter(item => item.kind === word);
+      setCategory(filtered);
+    }
+  };
+
+  return (
+    <div style={{ backgroundColor: 'maroon', padding: '20px', borderRadius: '5px', height: '100em' }}>
+      <section>
+        <div>
+          <h2>Today News</h2>
+          <div>
+            <label htmlFor="category-select">Filter by Category:</label>
+            <select id="category-select" onChange={handleFilterChange}>
+              <option value="all">All</option>
+              <option value="latest">Latest</option>
+              <option value="general">General</option>
+              <option value="breaking">Breaking</option>
+              <option value="cinema">Cinema</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="weather">Weather</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <div className="card-container">
+        {category.map((post) => (
+          <div className="homecard" key={post.id}>
+            <img src={post.img} style={{ objectFit: 'cover', width: '100%' }} width="384px" height="240px" alt={post.title} />
+            <p className="desccss">{post.description}</p>
+            <p className="detcss">{post.detail}</p>
+          </div>
+        ))}
+      </div>
+
+ 
+    </div>
+  );
+}
+
+export default Data;
+
+
+//3               Search alone
+// import React, { useState } from 'react';
+// import '../Components/Data.css';
+// import newsData from '../Components/newsDetails.json';
+
+// function Data() {
+//   // State to manage the filtered news data
+//   const [category, setCategory] = useState(newsData);
+//   const [searchTerm, setSearchTerm] = useState('');
+
+//   // Function to filter the news based on the selected category
+//   const sources = (e) => {
+//     const word = e.target.value;
+//     let filteredNews = newsData;
+
+//     // Filter by category
+//     if (word !== "all") {
+//       filteredNews = newsData.filter(item => item.kind === word);
+//     }
+
+//     // Filter by search term
+//     if (searchTerm) {
+//       filteredNews = filteredNews.filter(item => 
+//         item.title.toLowerCase().includes(searchTerm.toLowerCase())
+//       );
+//     }
+
+//     setCategory(filteredNews);
+//   };
+
+//   // Function to handle search input changes
+//   const handleSearchChange = (e) => {
+//     setSearchTerm(e.target.value);
+
+//     // Re-filter news data whenever search term changes
+//     let filteredNews = newsData;
+
+//     // Filter by category
+//     if (e.target.value) {
+//       filteredNews = filteredNews.filter(item => 
+//         item.title.toLowerCase().includes(e.target.value.toLowerCase())
+//       );
+//     }
+
+//     setCategory(filteredNews);
+//   };
+
+//   return (
+//     <>
+//       <section>
+//         <div>
+//           <h2>Today News</h2>
+       
+//           <input
+//             type="text"
+//             placeholder="Search..."
+//             value={searchTerm}
+//             onChange={handleSearchChange}
+//           />
+//         </div>
+//       </section>
+    
+//       <div className='card-container'>
+//         {category.map((post) => ( // Map over the filtered news category
+//           <div className='homecard' key={post.id}>
+//             <h5 className="hometitle">{post.title}</h5>
+//             <img src={post.img} style={{ objectFit: 'cover', width: '100%' }} width="384px" height="240px" alt={post.title} />
+//             <p>{post.description}</p>
+//             <a href="#">View</a>
+//           </div>
+//         ))}
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Data;
+
+//4               Search and Display
+// import React, { useState } from 'react';
+// import '../Components/Data.css';
+// import newsData from '../Components/newsDetails.json';
+
+// function Data() {
+//   // State to manage the filtered news data
+//   const [category, setCategory] = useState(newsData);
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [showSuggestions, setShowSuggestions] = useState(false);
+
+//   // Predefined search terms
+//   const searchTerms = ['Latest', 'Breaking', 'Cinema', 'Technology', 'Health', 'Sports', 'Weather', 'Entertainment'];
+
+//   // Function to filter the news based on the selected category
+//   const sources = (e) => {
+//     const word = e.target.value;
+//     let filteredNews = newsData;
+
+//     // Filter by category
+//     if (word !== "all") {
+//       filteredNews = newsData.filter(item => item.kind === word);
+//     }
+
+//     // Filter by search term
+//     if (searchTerm) {
+//       filteredNews = filteredNews.filter(item => 
+//         item.title.toLowerCase().includes(searchTerm.toLowerCase())
+//       );
+//     }
+
+//     setCategory(filteredNews);
+//   };
+
+//   // Function to handle search input changes
+//   const handleSearchChange = (e) => {
+//     const value = e.target.value;
+//     setSearchTerm(value);
+//     setShowSuggestions(value.length > 0);
+
+//     // Re-filter news data whenever search term changes
+//     let filteredNews = newsData;
+
+//     // Filter by category
+//     if (value) {
+//       filteredNews = filteredNews.filter(item => 
+//         item.title.toLowerCase().includes(value.toLowerCase())
+//       );
+//     }
+
+//     setCategory(filteredNews);
+//   };
+
+//   // Function to handle selection from suggestions
+//   const handleSuggestionClick = (term) => {
+//     setSearchTerm(term);
+//     setShowSuggestions(false);
+
+//     // Filter news data based on the selected term
+//     const filteredNews = newsData.filter(item => 
+//       item.title.toLowerCase().includes(term.toLowerCase())
+//     );
+
+//     setCategory(filteredNews);
+//   };
+
+//   return (
+//     <>
+//       <section>
+//         <div>
+//           <h2>Today News</h2>
+//           <input
+//             type="text"
+//             placeholder="Search..."
+//             value={searchTerm}
+//             onChange={handleSearchChange}
+//           />
+//           {showSuggestions && searchTerm && (
+//             <ul className="suggestions-list">
+//               {searchTerms.filter(term => term.toLowerCase().includes(searchTerm.toLowerCase())).map((term, index) => (
+//                 <li key={index} onClick={() => handleSuggestionClick(term)}>
+//                   {term}
+//                 </li>
+//               ))}
+//             </ul>
+//           )}
+//         </div>
+//       </section>
+    
+//       <div className='card-container'>
+//         {category.map((post) => ( // Map over the filtered news category
+//           <div className='homecard' key={post.id}>
+//             <h5 className="hometitle">{post.title}</h5>
+//             <img src={post.img} style={{ objectFit: 'cover', width: '100%' }} width="384px" height="240px" alt={post.title} />
+//             <p>{post.description}</p>
+//             <a href="#">View</a>
+//           </div>
+//         ))}
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Data;
+
+
+//5               Option Select More
+
+// import React, { useState } from 'react';
+// import '../Components/Data.css';
+// import newsData from '../Components/newsDetails.json';
+
+// function Data() {
+//   // State to manage the filtered news data
+//   const [category, setCategory] = useState(newsData);
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [selectedTerm, setSelectedTerm] = useState('');
+//   const [suggestions, setSuggestions] = useState([]); // New state for suggestions
+
+//   // Predefined search terms
+//   const searchTerms = ['Latest', 'Breaking', 'Cinema', 'Technology', 'Health', 'Sports', 'Weather', 'Entertainment'];
+
+//   // Function to filter the news based on the selected category and search term
+//   const filterNews = (newSearchTerm) => {
+//     let filteredNews = newsData;
+
+//     // Filter by search term
+//     if (newSearchTerm) {
+//       filteredNews = filteredNews.filter(item =>
+//         item.title.toLowerCase().includes(newSearchTerm.toLowerCase())
+//       );
+//     }
+
+//     // Filter by selected term if it's not empty
+//     if (selectedTerm) {
+//       filteredNews = filteredNews.filter(item => item.kind === selectedTerm);
+//     }
+
+//     setCategory(filteredNews);
+//   };
+
+//   // Function to handle search input changes
+//   const handleSearchChange = (e) => {
+//     const value = e.target.value;
+//     setSearchTerm(value);
+    
+//     // Filter suggestions based on input
+//     if (value) {
+//       const filteredSuggestions = searchTerms.filter(term =>
+//         term.toLowerCase().includes(value.toLowerCase())
+//       );
+//       setSuggestions(filteredSuggestions); // Update suggestions state
+//     } else {
+//       setSuggestions([]); // Clear suggestions if input is empty
+//     }
+    
+//     filterNews(value);
+//   };
+
+//   // Function to handle selection from dropdown
+//   const handleTermSelect = (e) => {
+//     const term = e.target.value;
+//     setSelectedTerm(term);
+//     setSearchTerm(term);
+//     setSuggestions([]); // Clear suggestions on selection
+//     filterNews(term); // Re-filter using the selected term
+//   };
+
+//   // Function to handle suggestion click
+//   const handleSuggestionClick = (term) => {
+//     setSearchTerm(term);
+//     setSelectedTerm(term);
+//     setSuggestions([]); // Clear suggestions
+//     filterNews(term); // Filter the news based on the selected term
+//   };
+
+//   return (
+//     <>
+//       <section>
+//         <div>
+//           <h2>Today News</h2>
+//           <select value={selectedTerm} onChange={handleTermSelect}>
+//             <option value="">Select a category...</option>
+//             {searchTerms.map((term, index) => (
+//               <option key={index} value={term}>{term}</option>
+//             ))}
+//           </select>
+//           {suggestions.length > 0 && (
+//             <ul className="suggestions-list">
+//               {suggestions.map((term, index) => (
+//                 <li key={index} onClick={() => handleSuggestionClick(term)}>
+//                   {term}
+//                 </li>
+//               ))}
+//             </ul>
+//           )}
+//         </div>
+//       </section>
+    
+//       <div className='card-container'>
+//         {category.map((post) => (
+//           <div className='homecard' key={post.id}>
+//             <h5 className="hometitle">{post.title}</h5>
+//             <img src={post.img} style={{ objectFit: 'cover', width: '100%' }} width="384px" height="240px" alt={post.title} />
+//             <p>{post.description}</p>
+//             <a href="#">View</a>
+//           </div>
+//         ))}
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Data;
+
+
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 5em;
+}
+.newsbg{
+    background-color: maroon;
+    background-size: contain;
+    height: 135em;
+}
+.viewcss{
+    background-color: black;
+    border: 2px solid gold;
+    border-radius: 10px;
+    color: gold;
+    font-weight: bold;
+    font-size: 20px;
+    position:absolute;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+}
+.desccss{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image: linear-gradient(180deg, yellow, orange);
+    border: 5px solid black;
+    color: black;
+    position: relative;
+    top: -15.5em;
+    text-align: center;
+    border-radius: 20px;
+}
+.detcss{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image: linear-gradient(180deg, yellow, orange);
+    border: 5px solid black;
+    color: black;
+    position: relative;
+    top: -4em;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.homecard{
+    width: 325px;
+    height: 285px;
+    background-color: maroon;
+    border: 5px solid black;
+    border-radius: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+.homecard:hover{
+    transform: translateY(-20px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

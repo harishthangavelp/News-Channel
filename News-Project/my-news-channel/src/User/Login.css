@@ -1,0 +1,201 @@
+/* Full width and height background for the entire viewport */
+.auth-containerl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh; /* Full height of the viewport */
+    width: 100vw;  /* Full width of the viewport */
+    position: absolute; /* Ensures the container spans the entire viewport */
+    top: 0;
+    left: 0;
+    background-color: #444; /* Gold and grey gradient background */
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    margin: 0; /* Remove default margin */
+}
+
+/* Form wrapper with a light grey background and shadow */
+.form-wrapperl {
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    background: linear-gradient(145deg, #e8e8e8, #d1d1d1); /* Soft grey gradient for the form */
+}
+
+/* Header with a darker gold shade */
+.h2l {
+    color: black; /* Gold color for header */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Form container with spaces between inputs */
+.forml {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input group and label styling */
+.input-groupl {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Styling for labels */
+.labell {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #6c757d; /* Greyish color for labels */
+}
+
+/* Styling for input fields */
+.inputl {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f0f0f0; /* Light grey background for inputs */
+}
+
+.inputl:focus {
+    border-color: #d4af37; /* Gold focus border */
+    background-color: #e8e8e8; /* Slightly darker grey background when focused */
+}
+
+/* Submit and toggle buttons styling */
+.submit-btnl, .toggle-btnl {
+    margin-top: 20px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #d4af37; /* Gold for buttons */
+    border: 1px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btnl:hover, .toggle-btnl:hover {
+    background-color: orange; /* Darker gold on hover */
+}
+
+/* Styling for the "Already Registered?" toggle button */
+.toggle-btnl {
+    background-color: #a29f98; /* Greyish tone for toggle */
+    margin-top: 10px;
+}
+
+.toggle-btnl:hover {
+    background-color: #444; /* Slightly darker grey on hover */
+}
+
+/* Back to Home link with a stylish border and hover effects */
+.back-btnl {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: #d4af37; /* Gold color for back button */
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #d4af37; /* Gold border */
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-btnl:hover {
+    background-color: #d4af37;
+    color: white;
+}
+
+/* Modal styles with gold and greyish color for message */
+.modal-content {
+    border-radius: 12px; /* Rounded corners for modal */
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    color: #d4af37; /* Gold title */
+}
+
+.modal-body {
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #e8e8e8; /* Light grey background for modal */
+    color: #6c757d; /* Grey text color */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .auth-containerl {
+        height: auto;
+        padding: 20px;
+        left: 0;
+    }
+
+    .form-wrapperl {
+        padding: 30px 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .h2l {
+        font-size: 1.5rem;
+    }
+
+    .forml {
+        width: 100%;
+    }
+
+    .input-groupl {
+        margin-bottom: 15px;
+    }
+
+    .inputl {
+        padding: 10px;
+    }
+
+    .submit-btnl, .toggle-btnl {
+        padding: 10px 12px;
+    }
+
+    .back-btnl {
+        margin-top: 10px;
+        padding: 8px 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-wrapperl {
+        padding: 20px 15px;
+    }
+
+    .h2l {
+        font-size: 1.2rem;
+    }
+
+    .submit-btnl, .toggle-btnl {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .back-btnl {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .inputl {
+        padding: 8px;
+    }
+}

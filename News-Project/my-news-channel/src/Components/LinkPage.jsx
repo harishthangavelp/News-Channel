@@ -5,8 +5,10 @@ function LinkPage() {
   return (
     <>
     <nav>
-    {/* <Link to = "/login" ></Link>
-    <Link to = "/register" ></Link> */}
+    <Link to = "/login" ></Link>
+    <Link to = "/register" ></Link>
+    <Link to = "/profile" ></Link>
+   
     </nav>
     </>
   )

@@ -1,38 +1,62 @@
-.topnav1 {
-    display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    align-items: flex-start; /* Align items to the left */
-    background-color: #444;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%; /* Make the navigation take up the full height of the page */
-    padding: 1em; /* Add padding around the items */
-    z-index: 1000;
-  }
+/* Home.css */
+
+/* The container that holds both the navbar and the content */
 
 
-  .topnav1 .topbut {
-    width: 100%; /* Make each button stretch across the full width */
-    padding: 15px;
-    color: #d4af37;
-    text-decoration: none;
-    text-align: left; /* Align text to the left */
-    font-size: 1rem;
-  }
-  
-  .topnav1 .topbut:hover {
-    background-color: lightslategrey;
-    border-radius: 5px;
+/* Left sidebar (navbar) */
+.navbar {
+  width: px;
+  background-color: #333;
+  color: white;
+  padding-top: 20px;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+/* Navbar items */
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  padding: 15px;
+  text-align: center;
+}
+
+.navbar ul li a {
+  color: #d4af37;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover effect for navbar links */
+.navbar ul li a:hover {
+  background-color: #575757;
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 220px; /* Adds space for the sidebar */
+  padding: 20px;
+  flex: 1;
+}
+
+h1 {
+  color: #333;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 
-  .nav-divider {
-    width: 90%; /* Match the width of the navlinks */
-    border: 0;
-    height: 1px;
-    background-color: white;
-    margin: 5px 0; /* Add spacing around the divider */
-    opacity: 0.5; /* Make it slightly transparent */
+  .main-content {
+    margin-left: 0;
   }
-
-  
+}

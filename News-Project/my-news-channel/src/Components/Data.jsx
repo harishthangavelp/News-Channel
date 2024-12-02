@@ -4,6 +4,7 @@ import newsData from '../Components/newsDetails.json';
 import '../Components/Data.css';
 import nup from '../images/nuppp.png'; // Assuming this is your profile image
 import { Modal } from 'react-bootstrap';
+import Home from './Home';
 
 function Data() {
   const [category, setCategory] = useState(newsData);
@@ -80,6 +81,7 @@ function Data() {
   return (
     <div style={{ backgroundColor: '#2e2e2e', padding: '20px', minHeight: '100vh', position: 'relative' }}>
       {/* User Name Display */}
+      {/* <Home/> */}
       <div
         style={{
           position: 'absolute',
@@ -133,53 +135,64 @@ function Data() {
             }}
           >
             <li>
-              <button
-                onClick={handleProfileClick}
-                style={{
-                  background: 'none',
-                  color: '#d4af37',
-                  padding: '8px 20px',
-                  border: 'none',
-                  width: '100%',
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                }}
-              >
-                Profile
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={handleLogin}
-                style={{
-                  background: 'none',
-                  color: '#d4af37',
-                  padding: '8px 20px',
-                  border: 'none',
-                  width: '100%',
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                }}
-              >
-                Login
-              </button>
-            </li>
-            <li>
-              <button
-              onClick={handleLogout}
-                style={{
-                  background: 'none',
-                  color: '#d4af37',
-                  padding: '8px 20px',
-                  border: 'none',
-                  width: '100%',
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                }}
-              >
-                Logout
-              </button>
-            </li>
+  <button
+    onClick={handleProfileClick}
+    style={{
+      background: 'none',
+      color: '#d4af37',
+      padding: '8px 20px',
+      border: 'none',
+      width: '100%',
+      textAlign: 'left',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s ease',  // Add transition for smooth hover effect
+    }}
+    onMouseEnter={(e) => e.target.style.backgroundColor = '#575757'} // On hover
+    onMouseLeave={(e) => e.target.style.backgroundColor = '#444'}  // On hover out
+  >
+    Profile
+  </button>
+</li>
+<li>
+  <button
+    onClick={handleLogin}
+    style={{
+      background: 'none',
+      color: '#d4af37',
+      padding: '8px 20px',
+      border: 'none',
+      width: '100%',
+      textAlign: 'left',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s ease',  // Add transition for smooth hover effect
+    }}
+    onMouseEnter={(e) => e.target.style.backgroundColor = '#575757'} // On hover
+    onMouseLeave={(e) => e.target.style.backgroundColor = '#444'}  // On hover out
+  >
+    Login
+  </button>
+</li>
+<li>
+  <button
+    className='nuphov'
+    onClick={handleLogout}
+    style={{
+      background: 'none',
+      color: '#d4af37',
+      padding: '8px 20px',
+      border: 'none',
+      width: '100%',
+      textAlign: 'left',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s ease',  // Add transition for smooth hover effect
+    }}
+    onMouseEnter={(e) => e.target.style.backgroundColor = '#575757'} // On hover
+    onMouseLeave={(e) => e.target.style.backgroundColor = '#444'}  // On hover out
+  >
+    Logout
+  </button>
+</li>
+
           </ul>
         </div>
       )}

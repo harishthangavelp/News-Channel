@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 130vh; /* Full height of the viewport */
+    height: 110vh; /* Full height of the viewport */
     width: 100vw;  /* Full width of the viewport */
     position: absolute; /* Ensures the container spans the entire viewport */
     top: 0;

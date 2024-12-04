@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 130vh; /* Full height of the viewport */
+    height: 150vh; /* Full height of the viewport */
     width: 100vw;  /* Full width of the viewport */
     position: absolute; /* Ensures the container spans the entire viewport */
     top: 0;
@@ -137,33 +137,65 @@
 }
 
 /* Responsive Design */
-/* For very small devices (older phones, below 360px width) */
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 768px) {
     .auth-containerl {
-        height: auto; /* Adjust height for smaller screens */
-        padding: 10px; /* Reduce padding for better fit */
+        height: auto;
+        padding: 20px;
+        left: 0;
     }
 
     .form-wrapperl {
-        padding: 15px 10px;
+        padding: 30px 20px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .h2l {
-        font-size: 1rem; /* Smaller font for headers */
+        font-size: 1.5rem;
     }
 
-    .submit-btnl, .toggle-btnl, .back-btnl {
-        font-size: 0.8rem;
-        padding: 6px 8px; /* Compact buttons */
+    .forml {
+        width: 100%;
+    }
+
+    .input-groupl {
+        margin-bottom: 15px;
     }
 
     .inputl {
-        padding: 6px; /* Smaller inputs */
-        font-size: 0.9rem; /* Reduce input text size */
+        padding: 10px;
+    }
+
+    .submit-btnl, .toggle-btnl {
+        padding: 10px 12px;
     }
 
     .back-btnl {
-        font-size: 0.8rem;
+        margin-top: 10px;
+        padding: 8px 15px;
     }
 }
 
+@media screen and (max-width: 480px) {
+    .form-wrapperl {
+        padding: 20px 15px;
+    }
+
+    .h2l {
+        font-size: 1.2rem;
+    }
+
+    .submit-btnl, .toggle-btnl {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .back-btnl {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .inputl {
+        padding: 8px;
+    }
+}

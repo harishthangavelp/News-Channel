@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "fine-physics-434614-a4",
+  "private_key_id": "448970094c993529b4bc2a77048501761600fc44",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDtIZcIJovqjakx\nB5Vgzksb6KHsvIrjUgFU/6reFn2qXc034BNMVlNQDnSEh2UapEh6gr5xPYN+hhAx\n658WLp8HuaFI/hU/gbCcIiNcvWgNdRuYgZ8OpJoV1DI/1G9JbmVredqW61b3YIrX\nOcb9EcC8VOE1U/I7iLaPUKFK+xkRnfu5es6UH9nn732+hYFaRPwHrD32HMI1zeRu\nbUHRXnCzgJuvYTCkejwCQyLtTizpI5a2S3gqLRA6ukEKqtHoKlHMOh8yZROKH20Q\nnsRRrpDl85NeQ79cQOcIRSs1zrGOYybj+PA3vbHqhNV0RPGyhTIfR2ZCDO2lFiU5\n07qELCtZAgMBAAECggEAEEkvS0MCdwB1r0VbEAP7CpamkFC+pTAboU/R12DqDopU\nrtK34JVJMYVcoUF/Qx4nUCqsk7Bq2ISylgsdqPNYvroUBqRUp0Dr9T0u+o6Tl+EE\nHSxB1UqevoMNVG7tmbh4RLJgvd654VGDF5cDQJw4hXa65OO4DjiseRlLio/GP/xc\n0zh8b5eX0liHjb8gVU43ZzJSEwbojJrXa+PuX5lWKb3pmnbanRrfn9ma3R9p2juM\nvrgS8fn+okqUbVGhQTa1ui4fVHGEyCuPixCgxEpncFYJy/Yfu6IRQclcF81pcQms\n82rfxcmlVZZK0ruSc6RKKTp0J4nKZklFlqwVxBXJxQKBgQD9VCIPxpJLhu9c+JMh\nQDz4ysJrmWWzo3GxqEr7oDL9CxZjFbqrOfTsJgu+cblZnwPk21s1Hat1AFb6uHhS\nEUXxRlU5KUwgIvfrpGjemV5G9A43Voj7a1gomfyMllomsOfD/ZPdEQ9PIaPorzQr\n7ipbfFaSHxzDTqcZPilTcpLDnwKBgQDvobtGRxiJxoEvmiuWnxcohnhWlGXcmu0e\nFhTzPIEthmYMq5jsXUw5PTv1ec1rK1S0Zj0e7feXAMKO9TOMIjLBgNc4IfYEFdvR\nz2SaMWS5Cfv9Go9i3fsQdGQnklhRZQLsTsXPfNMtiQcfVNOBnfpjNIJL3IdKA2nD\nslBXs9XuBwKBgFo2HbMUeYBf2tl2w54xrATE35tFkwv3hkNHtPwKPl4SFrTORh03\nlFqL6d61zNV3ZQGYg9BUcnxF1LOQAXjoIcoby7mBVVSUX0kQ0S+D2ijWPEHElR9D\nSK+ctmyyFgR1NvN6V69/pb3+MspnqeKC+558lq+OWMXMOoEou7q1sEHtAoGBAIvL\n5W4dYeJWjN0RauZnD2KT+DZCQp6NP1Gy/ivcm1vMsVIo9YDG+QXXhFgz47Pmxnar\nwnJ9z1gnmFlAEP9qoAOlP2k+3sAJZIElJYKS2Dje60QAL7A04hf6Xsd7J8zsSeVE\nG0BtiOFitGYB3ZYbbIxdgLnzAHYcQaJqL1bK0j4XAoGBAOfaMOdo8jHXWa2qUJwl\nMGQ55D9vYufingrCEe+c/0Qd8BbcEnuG4a25w8yGROhpgIC9P9Re0gm8GNps0Rif\nNQn0xD4ZlX5xnR2D2fIQM+ynKPoU1Scyi6JC2X2Da4l6RrRJysK3OAlPF2M02KbE\n1T6v7WYU7MrIzQJ6ZDosjAqO\n-----END PRIVATE KEY-----\n",
+  "client_email": "news-update@fine-physics-434614-a4.iam.gserviceaccount.com",
+  "client_id": "109837237307340151715",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/news-update%40fine-physics-434614-a4.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

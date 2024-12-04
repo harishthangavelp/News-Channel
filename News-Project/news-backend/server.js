@@ -6,13 +6,14 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+require('dotenv').config();
 
-const credentials = require("./fine-physics-434614-a4-2872d6d56dcf.json");
+// const credentials = require("./fine-physics-434614-a4-448970094c99.json");
 
 const client = new google.auth.JWT(
-    credentials.client_email,
+    process.env.GOOGLE_CLIENT_EMAIL,
     null,
-    credentials.private_key,
+    process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"), // Replace escaped newlines
     ["https://www.googleapis.com/auth/spreadsheets"]
 );
 

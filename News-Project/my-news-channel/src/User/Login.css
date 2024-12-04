@@ -137,6 +137,47 @@
 }
 
 /* Responsive Design */
+/* Media query for Vivo Y95 with width 720px and height 1520px */
+@media screen and (width: 720px) and (height: 1520px) {
+    .auth-containerl {
+        /* Adjusting for the Vivo Y95 screen size */
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-wrapperl {
+        padding: 25px 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .h2l {
+        font-size: 1.4rem;
+    }
+
+    .forml {
+        width: 100%;
+    }
+
+    .input-groupl {
+        margin-bottom: 15px;
+    }
+
+    .inputl {
+        padding: 10px;
+    }
+
+    .submit-btnl, .toggle-btnl {
+        padding: 12px 15px;
+    }
+
+    .back-btnl {
+        margin-top: 10px;
+        padding: 10px 20px;
+    }
+}
+
+/* Existing responsive media queries */
 @media screen and (max-width: 768px) {
     .auth-containerl {
         height: auto;

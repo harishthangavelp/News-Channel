@@ -1,44 +1,45 @@
-// server.js
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const fs = require('fs');
-const XLSX = require('xlsx');
-
+const { google } = require("googleapis");
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
-app.use(bodyParser.json());
+
 app.use(cors());
+app.use(bodyParser.json());
 
-// Endpoint to handle registration
-app.post('/register', (req, res) => {
-    const { myname, username } = req.body;
+const credentials = require("./fine-physics-434614-a4-2872d6d56dcf.json");
 
-    // Check if the file exists, else create it
-    const filePath = 'registered_users.xlsx';
-    let workbook;
-    if (fs.existsSync(filePath)) {
-        workbook = XLSX.readFile(filePath);
-    } else {
-        workbook = XLSX.utils.book_new();
-        const sheet = XLSX.utils.json_to_sheet([]);
-        XLSX.utils.book_append_sheet(workbook, sheet, 'Users');
-        XLSX.writeFile(workbook, filePath);
+const client = new google.auth.JWT(
+    credentials.client_email,
+    null,
+    credentials.private_key,
+    ["https://www.googleapis.com/auth/spreadsheets"]
+);
+
+const spreadsheetId = "1RonIwbjK4cpl4guNsW7IwYbw5BKnvgt9flv0vgmTPus";
+
+app.post("/addUser", async (req, res) => {
+    try {
+        const { myname, username } = req.body;
+
+        const sheets = google.sheets({ version: "v4", auth: client });
+
+        await sheets.spreadsheets.values.append({
+            spreadsheetId,
+            range: "Sheet1!D:E",
+            valueInputOption: "USER_ENTERED",
+            resource: {
+                values: [[myname, username]],
+            },
+        });
+
+        res.status(200).send("User added successfully!");
+    } catch (error) {
+        res.status(500).send("Error adding user: " + error.message);
     }
-
-    // Append new data
-    const sheet = workbook.Sheets['Users'];
-    const data = XLSX.utils.sheet_to_json(sheet);
-    data.push({ Name: myname, Username: username });
-    const updatedSheet = XLSX.utils.json_to_sheet(data);
-    workbook.Sheets['Users'] = updatedSheet;
-
-    // Save the file
-    XLSX.writeFile(workbook, filePath);
-
-    res.json({ message: 'Data saved successfully!' });
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });

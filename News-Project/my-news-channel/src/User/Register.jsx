@@ -26,28 +26,50 @@ const Register = () => {
         });
     };
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
-
+    
         if (formData.password !== formData.confirmPassword) {
             setModalMessage("Passwords do not match!");
             setModalColor('#808080');
             setShowModal(true);
             return;
         }
-
-        // Save data to localStorage (In real apps, use backend)
-        localStorage.setItem("username", formData.username);
-        localStorage.setItem("password", formData.password);
-
-        setModalMessage("Registration successful!");
-        setModalColor('#808080');
-        setShowModal(true);
-
-        setTimeout(() => {
-            navigate('/login'); // Navigate to Login page after registration
-        }, 1000);
+    
+        try {
+            // Send data to backend
+            const response = await fetch("http://localhost:5000/addUser", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    myname: formData.myname,
+                    username: formData.username,
+                }),
+            });
+    
+            if (response.ok) {
+                setModalMessage("Registration successful!");
+                setModalColor('#808080');
+                setShowModal(true);
+    
+                setTimeout(() => {
+                    navigate('/login'); // Navigate to Login page after registration
+                }, 1000);
+            } else {
+                const error = await response.text();
+                setModalMessage(`Registration failed: ${error}`);
+                setModalColor('#ff0000');
+                setShowModal(true);
+            }
+        } catch (error) {
+            setModalMessage(`Error: ${error.message}`);
+            setModalColor('#ff0000');
+            setShowModal(true);
+        }
     };
+    
 
     const handleCloseModal = () => setShowModal(false);
 

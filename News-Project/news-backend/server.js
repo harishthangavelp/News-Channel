@@ -8,7 +8,6 @@ app.use(cors());
 app.use(bodyParser.json());
 require('dotenv').config();
 
-const credentials = require("./fine-physics-434614-a4-2872d6d56dcf.json");
 
 const client = new google.auth.JWT(
     process.env.GOOGLE_CLIENT_EMAIL,

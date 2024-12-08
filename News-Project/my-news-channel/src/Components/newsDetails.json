@@ -4,70 +4,80 @@
         "description": "Huge Cyclone in Chennai",
         "kind": "breaking",
         "img": "https://media.istockphoto.com/id/1040975032/photo/tropical-hurricane-approaching-the-usa-elements-of-this-image-are-furnished-by-nasa.jpg?s=612x612&w=0&k=20&c=HG3edw2RuYLsFmWwVyB09AQsOLLhNEIyXk9Fjx6xWQg=",
-        "detail": "There is a cyclone named Sura attacking Chennai and Tirunelveli ."
+        "detail": "There is a cyclone named Sura attacking Chennai and Tirunelveli .",
+        "likes": 0
     },
     {
         "id": 2,
         "description": "Vande Bharat in Tirunelveli",
         "kind": "latest",
         "img": "https://static.toiimg.com/thumb/msid-102851650,imgsize-68536,width-400,resizemode-4/102851650.jpg",
-        "detail": "Vande Bharat Super Fast Express started by Prime Minister Mr. Narendra Modi."
+        "detail": "Vande Bharat Super Fast Express started by Prime Minister Mr. Narendra Modi.",
+        "likes": 0
     },
     {
         "id": 3,
         "description": "Asian Dog runs 100km per hour",
         "kind": "entertainment",
         "img": "https://www.shutterstock.com/image-photo/woman-dog-running-exercising-outdoor-600nw-1959219043.jpg",
-        "detail": "Asian Dog from America runs 100km per hour, making a Guinness record."
+        "detail": "Asian Dog from America runs 100km per hour, making a Guinness record.",
+        "likes": 0
     },
     {
         "id": 4,
         "kind": "cinema",
         "description": "Vettaiyan releasing in Diwali",
         "img": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202410/superstar-rajinikanth-in-vettaiyan-movie-hd-images-115942308-16x9_0.jpg?VersionId=wLJRQZwQWjNlOU7MjHXqM_fyboMymo1d&size=690:388",
-        "detail": "Vettaiyan starring Rajinikanth, Manju Warrier & Amitabh Bachchan."
+        "detail": "Vettaiyan starring Rajinikanth, Manju Warrier & Amitabh Bachchan.",
+        "likes": 0
     },
     {
         "id": 5,
         "kind": "weather",
         "description": "Heavy Rain in Chennai",
         "img": "https://media.istockphoto.com/id/1040975032/photo/tropical-hurricane-approaching-the-usa-elements-of-this-image-are-furnished-by-nasa.jpg?s=612x612&w=0&k=20&c=HG3edw2RuYLsFmWwVyB09AQsOLLhNEIyXk9Fjx6xWQg=",
-        "detail": "There is a cyclone named Sura attacking Chennai and Tirunelveli."
+        "detail": "There is a cyclone named Sura attacking Chennai and Tirunelveli.",
+        "likes": 0
     },
     {
         "id": 6,
         "description": "New Smartphone Launch",
         "kind": "latest",
         "img": "https://image.made-in-china.com/2f0j00TMyVcvEPaQYS/2024-New-Release-Mobile-Phone-S14-PRO-Smartphone.jpg",
-        "detail": "The latest smartphone model has been launched with advanced features."
+        "detail": "The latest smartphone model has been launched with advanced features.",
+        "likes": 0
     },
     {
         "id": 7,
         "description": "Football Match Highlights",
         "kind": "sports",
         "img": "https://www.aljazeera.com/wp-content/uploads/2022/11/2022-04-20T202058Z_1188430601_UP1EI4K1KIWO1_RTRMADP_3_SOCCER-ENGLAND-CHE-ARS-REPORT.jpg?resize=1920%2C1440",
-        "detail": "Highlights from the thrilling match between local teams."
+        "detail": "Highlights from the thrilling match between local teams.",
+        "likes": 0
     },
     {
         "id": 8,
         "description": "Art Exhibition Opening",
         "kind": "entertainment",
         "img": "https://static.standard.co.uk/2022/01/10/11/At%20Peace-21.jpg?width=1200",
-        "detail": "An exhibition featuring contemporary art opens this weekend."
+        "detail": "An exhibition featuring contemporary art opens this weekend.",
+        "likes": 0
     },
     {
         "id": 9,
         "description": "New Book Release",
         "kind": "general",
         "img": "https://oxfordbookstore.com/public/uploads/product_images/1729928707_9789356295698.jpg",
-        "detail": "A new bestseller has hit the shelves, captivating readers everywhere."
+        "detail": "A new bestseller has hit the shelves, captivating readers everywhere.",
+        "likes": 0
     },
     {
         "id": 10,
         "description": "City Park Renovation",
         "kind": "general",
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7DZ39OyEGyBp76dcBcansCNCiQOG-hoAVvw&s",
-        "detail": "Renovation of the city park aims to enhance community recreation."
+        "detail": "Renovation of the city park aims to enhance community recreation.",
+        "likes": 0
     }
 ]
 

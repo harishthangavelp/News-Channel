@@ -46,10 +46,13 @@ const Register = () => {
                 body: JSON.stringify({
                     myname: formData.myname,
                     username: formData.username,
+                    password: formData.password,  // Make sure password is also saved on the backend
                 }),
             });
     
             if (response.ok) {
+                localStorage.setItem("username", formData.username);  // Store username
+                localStorage.setItem("password", formData.password);  // Store password
                 setModalMessage("Registration successful!");
                 setModalColor('#808080');
                 setShowModal(true);

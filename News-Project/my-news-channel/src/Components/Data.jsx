@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import newsData from '../Components/newsDetails.json';
 import '../Components/Data.css';
 import nup from '../images/nuppp.png'; // Assuming this is your profile image
+import star from '../images/sstar.png'
 import { Modal } from 'react-bootstrap';
 import Home from './Home';
 import { FaHeart } from 'react-icons/fa'; 
 
 function Data() {
-  const [category, setCategory] = useState(newsData.map(item => ({ ...item, liked: false, likes: 0 }))); // Add 'liked' and 'likes' state to each item
+  
   const navigate = useNavigate();
   const [popupContent, setPopupContent] = useState(null); // State for popup content
   const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup visibility
@@ -24,24 +25,87 @@ function Data() {
           : item
       )
     );
-  };
-
-  useEffect(() => {
-    const storedMyname = localStorage.getItem("myname");
-    if (storedMyname) {
-      setMyname(storedMyname); 
-    }
-  }, []);
-
-  const handleFilterChange = (e) => {
-    const word = e.target.value;
-    if (word === "all") {
-      setCategory(newsData);
+  
+    // Update localStorage with `likes`
+    const storedLikes = JSON.parse(localStorage.getItem("likedItems")) || {};
+    const updatedLikes = { ...storedLikes };
+  
+    if (updatedLikes[id]) {
+      delete updatedLikes[id]; // If already liked, remove from storage
     } else {
-      const filtered = newsData.filter((item) => item.kind === word);
-      setCategory(filtered);
+      updatedLikes[id] = (storedLikes[id] || 0) + 1; // Save likes count
     }
+  
+    localStorage.setItem("likedItems", JSON.stringify(updatedLikes));
   };
+  
+
+
+  
+  useEffect(() => {
+    
+    const storedMyname = localStorage.getItem("myname");
+    const storedLoginTime = localStorage.getItem("loginTime");
+    if (storedMyname && storedLoginTime) {
+      const currentTime = Date.now();
+      const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+
+      // Check if the login time is within the last hour
+      if (currentTime - storedLoginTime <= oneHour) {
+          setMyname(storedMyname);
+      } else {
+          // If more than 1 hour has passed, clear login data
+          localStorage.removeItem("myname");
+          localStorage.removeItem("loginTime");
+      }
+  }
+    
+    const storedLikes = JSON.parse(localStorage.getItem("likedItems")) || {};
+  const updatedCategory = newsData.map((item) => ({
+    ...item,
+    liked: !!storedLikes[item.id], // Check if the item is liked
+    likes: storedLikes[item.id] || 0, // Retrieve the stored likes count or default to 0
+  }));
+  setCategory(updatedCategory);
+}, []);
+
+
+
+const [newsState, setNewsState] = useState(
+  newsData.map((item) => ({
+    ...item,
+    liked: false,
+    likes: 0,
+  }))
+); // Store the complete news data with likes and liked status
+
+const [category, setCategory] = useState(newsState); // Derive the filtered view from `newsState`
+
+
+
+const handleFilterChange = (e) => {
+  const word = e.target.value;
+  if (word === "all") {
+    setCategory(newsState); // Reset to full state
+  } else {
+    setCategory(newsState.filter((item) => item.kind === word)); // Filter based on `newsState`
+  }
+};
+
+useEffect(() => {
+  const storedLikes = JSON.parse(localStorage.getItem("likedItems")) || {};
+  const updatedNewsState = newsData.map((item) => ({
+    ...item,
+    liked: !!storedLikes[item.id], // Restore liked status
+    likes: storedLikes[item.id] || 0, // Restore likes count
+  }));
+  setNewsState(updatedNewsState);
+  setCategory(updatedNewsState); // Update both states on initial load
+}, []);
+
+
+  
+
 
   const openPopup = (detail, description) => {
     setPopupContent({ description, detail });
@@ -55,6 +119,14 @@ function Data() {
 
   const toggleDropdown = () => {
     setDropdownVisible((prev) => !prev); // Toggle dropdown visibility
+  };
+
+  const handleStarClick = () => {
+    navigate('/favorites'); // Navigate to Favorites page
+  };
+
+  const handleFavClick = () => {
+    navigate('/favorites'); // Navigate to Favorites page
   };
 
   const handleProfileClick = () => {
@@ -95,7 +167,7 @@ function Data() {
         style={{
           position: 'absolute',
           top: '1.55em',
-          right: '4.5em',
+          right: '5.5em',
           color: '#d4af37',
           fontFamily: 'Arial, sans-serif',
           fontSize: '18px',
@@ -103,7 +175,9 @@ function Data() {
       >
         {myname} {/* Display the name here */}
       </div>
-
+      <h2 className='favs' onClick={handleFavClick} style={{ right: '18em',top:'1.65em', color: '#d4af37', cursor:'pointer', fontFamily: 'Georgia, serif',fontSize: '18px', position: 'absolute' }}>
+            Favorites
+          </h2>
       {/* Profile Image */}
       <img
         src={nup}
@@ -112,7 +186,7 @@ function Data() {
         style={{
           position: 'absolute',
           top: '20px',
-          right: '20px',
+          right: '50px',
           width: '45px',
           height: '45px',
           borderRadius: '50%',
@@ -204,7 +278,21 @@ function Data() {
           </ul>
         </div>
       )}
-
+       
+<img
+        src={star}
+        onClick={handleStarClick}
+        style={{
+          position: 'absolute',
+          top: '1.45em',
+          right: '25em',
+          width: '35px',
+          height: '35px',
+          borderRadius: '50%',
+          // border: '2px solid #d4af37',
+          cursor: 'pointer',
+        }}
+      />
       {/* News Section */}
       <section>
         <div>
@@ -280,9 +368,9 @@ function Data() {
         viewBox="0 0 24 24"
         fill={post.liked ? 'red' : 'transparent'}
         stroke={post.liked ? 'none' : 'white'}
-        strokeWidth="1"
-        width="100%"
-        height="100%"
+        strokeWidth="2"
+        width="25"
+                height="25"
       >
         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
       </svg>

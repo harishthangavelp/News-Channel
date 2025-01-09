@@ -7,6 +7,7 @@ import Login from '../User/Login';
 import Register from '../User/Register';
 import LinkPage from './LinkPage';
 import Profile from '../User/Profile';
+import Favorites from '../Favorites/Favorites';
 
 function RouteLink() {
   return (
@@ -17,6 +18,7 @@ function RouteLink() {
         <Route path="/login" element={<Login />} ></Route>
         <Route path="/register" element={<Register />} ></Route>
         <Route path="/profile" element={<Profile />} ></Route>
+        <Route path="/favorites" element={<Favorites />} ></Route>
       </Routes>
     </Router>
   );

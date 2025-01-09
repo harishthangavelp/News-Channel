@@ -35,6 +35,9 @@
 .desccss:hover {
   text-decoration: underline;
 }
+.favs:hover{
+  text-decoration: underline;
+}
 
 .popup-overlay {
   position: fixed;
@@ -86,3 +89,4 @@
   z-index: 2; /* Ensure it stays above the image */
   padding: 5px; /* Optional padding for better click area */
 }
+

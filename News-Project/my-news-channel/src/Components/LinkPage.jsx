@@ -8,6 +8,7 @@ function LinkPage() {
     <Link to = "/login" ></Link>
     <Link to = "/register" ></Link>
     <Link to = "/profile" ></Link>
+    <Link to = "/favorites" ></Link>
    
     </nav>
     </>

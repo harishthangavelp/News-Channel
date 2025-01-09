@@ -20,6 +20,7 @@ const Register = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        console.log(`Input changed: ${name} = ${value}`);
         setFormData({
             ...formData,
             [name]: value,
@@ -28,7 +29,7 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-    
+        console.log("Register button clicked");
         if (formData.password !== formData.confirmPassword) {
             setModalMessage("Passwords do not match!");
             setModalColor('#808080');
@@ -44,6 +45,7 @@ const Register = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
+                    
                     myname: formData.myname,
                     username: formData.username,
                     password: formData.password,  // Make sure password is also saved on the backend

@@ -70,7 +70,6 @@ const handleEditSubmit = async (e) => {
     item.id === editingPost.id ? { ...item, ...editFormData } : item
   );
   setCategory(updatedNewsData);
-  localStorage.setItem("newsCategory", JSON.stringify(updatedNewsData));
   setEditingPost(null); // Close the modal
 
   // Save changes to the backend
@@ -96,13 +95,8 @@ const handleEditSubmit = async (e) => {
 
 
 const handleDelete = async (id) => {
-  const updatedCategory = category.filter((item) => item.id !== id);
-  setCategory(updatedCategory);
-
-  // Save the updated data to localStorage
-  localStorage.setItem("newsCategory", JSON.stringify(updatedCategory));
   try {
-    const response = await fetch('https://news-channel-14.onrender.com/delete-news', {
+    const response = await fetch('https://news-channel-14.onrender.com//delete-news', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -241,11 +235,7 @@ useEffect(() => {
   setCategory(updatedNewsState); // Update both states on initial load
 }, []);
 
-useEffect(() => {
-  // Load the initial data from localStorage if it exists
-  const savedCategory = JSON.parse(localStorage.getItem("newsCategory")) || newsData;
-  setCategory(savedCategory);
-}, []);
+
  
 
 
@@ -267,9 +257,7 @@ useEffect(() => {
     setDropdownVisible((prev) => !prev); // Toggle dropdown visibility
   };
 
-  const handleNavigate = () => {
-     window.open('/myuserdata', '_blank'); // Open in new tab
-  };
+ 
 
   const handleFavClick = () => {
     navigate('/favorites'); // Navigate to Favorites page
@@ -317,7 +305,7 @@ useEffect(() => {
 
     <div>
       <button
-        onClick={handleNavigate} // Show modal on button click
+        onClick={() => setIsModalVisible(true)} // Show modal on button click
         style={{
           width: '70px',
           height: '70px',

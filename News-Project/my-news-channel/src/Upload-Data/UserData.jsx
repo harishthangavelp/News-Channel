@@ -20,13 +20,6 @@ function UserData({ onSubmit }) {
     });
   };
 
-  const fetchNews = async () => {
-    const response = await fetch('https://news-channel-14.onrender.com/getNews');
-    const data = await response.json();
-    setNewsData(data); // Update state with the latest data
-  };
-  
-  // Call fetchNews after form submission to refresh the news data
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -37,22 +30,23 @@ function UserData({ onSubmit }) {
         },
         body: JSON.stringify(formData),
       });
-      if (!response.ok) {
-        throw new Error('Failed to submit data');
-      }
-  
-      // Fetch updated news after submitting new data
-      fetchNews();
-  
+      if (!response.ok) throw new Error('Failed to submit data');
+      
+      
       setFormData({ id: '', description: '', kind: '', img: '', detail: '' });
+      
+      // Show success popup
       setIsPopupVisible(true);
-      setTimeout(() => setIsPopupVisible(false), 1000);
+      
+      // Hide popup after 3 seconds
+      setTimeout(() => {
+        setIsPopupVisible(false);
+      }, 1000);
     } catch (error) {
       console.error(error);
       alert('An error occurred while submitting data');
     }
   };
-  
 
   return (
     <>

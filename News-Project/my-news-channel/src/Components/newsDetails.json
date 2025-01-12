@@ -79,5 +79,12 @@
     "detail": "bouquet",
     "liked": false,
     "likes": 0
+  },
+  {
+    "id": "today",
+    "description": "all",
+    "kind": "general",
+    "img": "https://lyricloops.com/wp-content/uploads/2024/11/Hey-Minnale-Lyrics-Haricharan-Shweta-Mohan-Amaran-2024.webp",
+    "detail": "hahaha"
   }
 ]

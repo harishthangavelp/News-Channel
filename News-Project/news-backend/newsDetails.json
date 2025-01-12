@@ -1,10 +1,28 @@
 [
   {
+    "id": 1,
+    "description": "Huge Cyclone",
+    "kind": "breaking",
+    "img": "https://media.istockphoto.com/id/1040975032/photo/tropical-hurricane-approaching-the-usa-elements-of-this-image-are-furnished-by-nasa.jpg?s=612x612&w=0&k=20&c=HG3edw2RuYLsFmWwVyB09AQsOLLhNEIyXk9Fjx6xWQg=",
+    "detail": "There is a cyclone named Sura attacking Chennai and Tirunelveli .",
+    "liked": true,
+    "likes": 1
+  },
+  {
     "id": 2,
     "description": "Vande Bharat in Tirunelveli",
     "kind": "latest",
     "img": "https://static.toiimg.com/thumb/msid-102851650,imgsize-68536,width-400,resizemode-4/102851650.jpg",
     "detail": "Vande Bharat Super Fast Express started by Prime Minister Mr. Narendra Modi.",
+    "likes": 0,
+    "liked": false
+  },
+  {
+    "id": 3,
+    "description": "Asian Dog runs 100km per hour",
+    "kind": "entertainment",
+    "img": "https://www.shutterstock.com/image-photo/woman-dog-running-exercising-outdoor-600nw-1959219043.jpg",
+    "detail": "Asian Dog from America runs 100km per hour, making a Guinness record.",
     "likes": 0,
     "liked": false
   },
@@ -72,11 +90,83 @@
     "liked": false
   },
   {
-    "id": "pushpa 2",
-    "description": "Huge Cyclone ",
+    "id": "hi",
+    "description": "helllo\n\n",
+    "kind": "all",
+    "img": "https://img.pikbest.com/wp/202345/full-hd-wallpaper-of-beach_9601041.jpg!sw800",
+    "detail": "yes",
+    "liked": false,
+    "likes": 0
+  },
+  {
+    "id": "new",
+    "description": "new1",
+    "kind": "weather",
+    "img": "https://img.pikbest.com/wp/202345/full-hd-wallpaper-of-beach_9601041.jpg!sw800",
+    "detail": "sample",
+    "liked": false,
+    "likes": 0
+  },
+  {
+    "id": "id",
+    "description": "desc",
+    "kind": "latest",
+    "img": "https://i.pinimg.com/736x/a2/b0/7c/a2b07c13f6f1339afee93c084f4ec023.jpg",
+    "detail": "done\n",
+    "liked": false,
+    "likes": 0
+  },
+  {
+    "id": "bang",
+    "description": "bg",
+    "kind": "all",
+    "img": "https://img.pikbest.com/wp/202345/full-hd-wallpaper-of-beach_9601041.jpg!sw800",
+    "detail": "all",
+    "liked": false,
+    "likes": 0
+  },
+  {
+    "id": "Pushpa 2",
+    "description": "Allu Arjun Movie",
+    "kind": "cinema",
+    "img": "https://stat5.bollywoodhungama.in/wp-content/uploads/2022/08/Pushpa-2-The-Rule-4.jpg",
+    "detail": "Blockbuster Hit 2800 Crores",
+    "liked": false,
+    "likes": 0
+  },
+  {
+    "id": "Pushpa 2",
+    "description": "Pushpa 2",
+    "kind": "cinema",
+    "img": "https://stat5.bollywoodhungama.in/wp-content/uploads/2022/08/Pushpa-2-The-Rule-4.jpg",
+    "detail": "Pushpa 2",
+    "liked": false,
+    "likes": 0
+  },
+  {
+    "id": "sample",
+    "description": "politics",
     "kind": "general",
     "img": "https://www.hindustantimes.com/ht-img/img/2024/11/29/550x309/PTI11-28-2024-000339B-0_1732860805105_1732860816531.jpg",
     "detail": "bouquet",
+    "liked": false,
+    "likes": 0
+  },
+  {
+    "id": "amaran",
+    "description": "new1",
+    "kind": "all",
+    "img": "https://lyricloops.com/wp-content/uploads/2024/11/Hey-Minnale-Lyrics-Haricharan-Shweta-Mohan-Amaran-2024.webp",
+    "detail": "minnale",
+    "liked": false,
+    "likes": 0
+  },
+  {
+    "id": "bang",
+    "description": "bang",
+    "kind": "cinema",
+    "img": "https://lyricloops.com/wp-content/uploads/2024/11/Hey-Minnale-Lyrics-Haricharan-Shweta-Mohan-Amaran-2024.webp",
+    "detail": "chumma",
     "liked": false,
     "likes": 0
   }

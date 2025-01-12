@@ -1,7 +1,6 @@
-// Register.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Modal } from 'react-bootstrap';
+import { Modal, Spinner } from 'react-bootstrap';
 import '../User/Login.css';
 import { Link } from 'react-router-dom';
 
@@ -15,12 +14,12 @@ const Register = () => {
     const [showModal, setShowModal] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
     const [modalColor, setModalColor] = useState('#808080');
+    const [isLoading, setIsLoading] = useState(false);  // State for spinner
     
     const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        console.log(`Input changed: ${name} = ${value}`);
         setFormData({
             ...formData,
             [name]: value,
@@ -29,11 +28,13 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        console.log("Register button clicked");
+        setIsLoading(true); // Show spinner
+
         if (formData.password !== formData.confirmPassword) {
             setModalMessage("Passwords do not match!");
-            setModalColor('#808080');
+            setModalColor('#ff0000'); // Error
             setShowModal(true);
+            setIsLoading(false); // Hide spinner
             return;
         }
     
@@ -45,7 +46,6 @@ const Register = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    
                     myname: formData.myname,
                     username: formData.username,
                     password: formData.password,  // Make sure password is also saved on the backend
@@ -56,7 +56,7 @@ const Register = () => {
                 localStorage.setItem("username", formData.username);  // Store username
                 localStorage.setItem("password", formData.password);  // Store password
                 setModalMessage("Registration successful!");
-                setModalColor('#808080');
+                setModalColor('#808080'); // Success
                 setShowModal(true);
     
                 setTimeout(() => {
@@ -65,16 +65,16 @@ const Register = () => {
             } else {
                 const error = await response.text();
                 setModalMessage(`Registration failed: ${error}`);
-                setModalColor('#ff0000');
+                setModalColor('#ff0000'); // Error
                 setShowModal(true);
             }
         } catch (error) {
             setModalMessage(`Error: ${error.message}`);
-            setModalColor('#ff0000');
+            setModalColor('#ff0000'); // Error
             setShowModal(true);
         }
+        setIsLoading(false); // Hide spinner after processing
     };
-    
 
     const handleCloseModal = () => setShowModal(false);
 
@@ -128,7 +128,13 @@ const Register = () => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="submit-btnl">Register</button>
+                        <button type="submit" className="submit-btnl">
+                            {isLoading ? (
+                                <Spinner animation="border" role="status" variant="light" style={{ color: '#d4af37' }} />
+                            ) : (
+                                'Register'
+                            )}
+                        </button>
                     </form>
                     <div className="back-to-login">
                         <Link to="/login" className="back-btnl">Already have an account? Log in</Link>

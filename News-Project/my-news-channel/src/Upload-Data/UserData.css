@@ -1,0 +1,129 @@
+.userdatabg {
+    background-color: #2e2e2e;
+    padding: 20px;
+    min-height: 100vh;
+    padding-top: 20px;
+    position: relative;
+  }
+  
+  .my-creations-btn {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    background-color: #d4af37;
+    color: #2e2e2e;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .my-creations-btn:hover {
+    background-color: #b38629;
+    color: #fff;
+  }
+  
+  .userdata-container {
+    background-color: #444;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    margin: 2em auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: #d4af37;
+  }
+  
+  .userdata-title {
+    text-align: center;
+    font-family: 'Georgia, serif';
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #d4af37;
+  }
+  
+  .userdata-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .userdata-label {
+    font-size: 16px;
+    color: #d4af37;
+  }
+  
+  .userdata-input,
+  .userdata-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    background-color: #555;
+    color: #d4af37;;
+    font-size: 14px;
+    font-family: 'Arial, sans-serif';
+  }
+  
+  .userdata-textarea {
+    resize: vertical;
+  }
+  
+  .userdata-button {
+    background-color: #d4af37;
+    color: #2e2e2e;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .userdata-button:hover {
+    background-color: #b38629;
+    color: #fff;
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 400px;
+    color: #d4af37;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .popup-close {
+    background-color: #d4af37;
+    color: #2e2e2e;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .popup-close:hover {
+    background-color: #b38629;
+  }
+  

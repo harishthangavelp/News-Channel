@@ -9,7 +9,9 @@ function LinkPage() {
     <Link to = "/register" ></Link>
     <Link to = "/profile" ></Link>
     <Link to = "/favorites" ></Link>
-   
+    <Link to = "/cpasspg"></Link>
+    <Link to = "/myuserdata"></Link>
+    
     </nav>
     </>
   )

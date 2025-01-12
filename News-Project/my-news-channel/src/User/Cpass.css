@@ -1,5 +1,5 @@
 /* Full width and height background for the entire viewport */
-.auth-containerl {
+.auth-containerc {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     position: absolute; /* Ensures the container spans the entire viewport */
     top: 0;
     left: 0;
-    background-color: #444; /* Gold and grey gradient background */
+    background-color: #444; /* Background color */
     font-family: 'Arial', sans-serif;
     background-size: cover;
     background-position: center;
@@ -16,7 +16,7 @@
 }
 
 /* Form wrapper with a light grey background and shadow */
-.form-wrapperl {
+.form-wrapperc {
     background-color: #fff;
     border-radius: 12px;
     border: 1px solid black;
@@ -29,26 +29,26 @@
 }
 
 /* Header with a darker gold shade */
-.h2l {
-    color: black; /* Gold color for header */
+.h2c {
+    color: black; /* Header color */
     margin-bottom: 20px;
     font-weight: bold;
 }
 
 /* Form container with spaces between inputs */
-.forml {
+.formc {
     display: flex;
     flex-direction: column;
 }
 
 /* Input group and label styling */
-.input-groupl {
+.input-groupc {
     margin-bottom: 20px;
     text-align: left;
 }
 
 /* Styling for labels */
-.labell {
+.labelc {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -56,7 +56,7 @@
 }
 
 /* Styling for input fields */
-.inputl {
+.inputc {
     width: 100%;
     padding: 12px;
     border: 1px solid black;
@@ -66,33 +66,13 @@
     background-color: #f0f0f0; /* Light grey background for inputs */
 }
 
-.inputl:focus {
-    border-color: #d4af37; /* Gold focus border */
+.inputc:focus {
+    border-color: #d4af37; /* Focus border */
     background-color: #e8e8e8; /* Slightly darker grey background when focused */
 }
 
-
-.submit-btnl {
-    background-color: #2e2e2e;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.submit-btnl:hover {
-    background-color: #444444;
-}
-
-.submit-btnl:disabled {
-    background-color: #555555;
-}
-
-/* Submit and toggle buttons styling */
-.submit-btnl, .toggle-btnl {
+/* Submit button styling */
+.submit-btnc {
     margin-top: 20px;
     padding: 12px 15px;
     border: none;
@@ -104,22 +84,12 @@
     transition: background-color 0.3s ease;
 }
 
-.submit-btnl:hover, .toggle-btnl:hover {
+.submit-btnc:hover {
     background-color: orange; /* Darker gold on hover */
 }
 
-/* Styling for the "Already Registered?" toggle button */
-.toggle-btnl {
-    background-color: #a29f98; /* Greyish tone for toggle */
-    margin-top: 10px;
-}
-
-.toggle-btnl:hover {
-    background-color: #444; /* Slightly darker grey on hover */
-}
-
 /* Back to Home link with a stylish border and hover effects */
-.back-btnl {
+.back-btnc {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
@@ -131,12 +101,12 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.back-btnl:hover {
+.back-btnc:hover {
     background-color: #d4af37;
     color: white;
 }
 
-/* Modal styles with gold and greyish color for message */
+/* Modal styles */
 .modal-content {
     border-radius: 12px; /* Rounded corners for modal */
 }
@@ -146,117 +116,76 @@
 }
 
 .modal-title {
-    color: #d4af37; /* Gold title */
+    color: #d4af37; /* Title color */
 }
 
 .modal-body {
     text-align: center;
     font-size: 1.2em;
-    background-color: #e8e8e8; /* Light grey background for modal */
+    background-color: #e8e8e8; /* Light grey background */
     color: #6c757d; /* Grey text color */
 }
 
 /* Responsive Design */
-/* Media query for Vivo Y95 with width 720px and height 1520px */
-@media screen and (width: 720px) and (height: 1520px) {
-    .auth-containerl {
-        /* Adjusting for the Vivo Y95 screen size */
-        height: auto;
-        padding: 20px;
-    }
-
-    .form-wrapperl {
-        padding: 25px 20px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .h2l {
-        font-size: 1.4rem;
-    }
-
-    .forml {
-        width: 100%;
-    }
-
-    .input-groupl {
-        margin-bottom: 15px;
-    }
-
-    .inputl {
-        padding: 10px;
-    }
-
-    .submit-btnl, .toggle-btnl {
-        padding: 12px 15px;
-    }
-
-    .back-btnl {
-        margin-top: 10px;
-        padding: 10px 20px;
-    }
-}
-
-/* Existing responsive media queries */
 @media screen and (max-width: 768px) {
-    .auth-containerl {
+    .auth-containerc {
         height: auto;
         padding: 20px;
         left: 0;
     }
 
-    .form-wrapperl {
+    .form-wrapperc {
         padding: 30px 20px;
         width: 100%;
         max-width: 100%;
     }
 
-    .h2l {
+    .h2c {
         font-size: 1.5rem;
     }
 
-    .forml {
+    .formc {
         width: 100%;
     }
 
-    .input-groupl {
+    .input-groupc {
         margin-bottom: 15px;
     }
 
-    .inputl {
+    .inputc {
         padding: 10px;
     }
 
-    .submit-btnl, .toggle-btnl {
+    .submit-btnc {
         padding: 10px 12px;
     }
 
-    .back-btnl {
+    .back-btnc {
         margin-top: 10px;
         padding: 8px 15px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .form-wrapperl {
+    .form-wrapperc {
         padding: 20px 15px;
     }
 
-    .h2l {
+    .h2c {
         font-size: 1.2rem;
     }
 
-    .submit-btnl, .toggle-btnl {
+    .submit-btnc {
         padding: 8px 10px;
         font-size: 0.9rem;
     }
 
-    .back-btnl {
+    .back-btnc {
         font-size: 0.9rem;
         padding: 8px 12px;
     }
 
-    .inputl {
+    .inputc {
         padding: 8px;
     }
 }

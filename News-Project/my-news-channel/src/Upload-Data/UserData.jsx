@@ -23,14 +23,18 @@ function UserData({ onSubmit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/addNews', {
+      const response = await fetch('https://news-channel-14.onrender.com/addNews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-      if (!response.ok) throw new Error('Failed to submit data');
+      const responseBody = await response.json();
+      if (!response.ok){
+        console.error('Error:', responseBody);
+      throw new Error('Failed to submit data');
+    }
       
       
       setFormData({ id: '', description: '', kind: '', img: '', detail: '' });

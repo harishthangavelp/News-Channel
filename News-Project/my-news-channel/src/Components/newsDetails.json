@@ -86,5 +86,40 @@
     "kind": "general",
     "img": "https://lyricloops.com/wp-content/uploads/2024/11/Hey-Minnale-Lyrics-Haricharan-Shweta-Mohan-Amaran-2024.webp",
     "detail": "hahaha"
+  },
+  {
+    "id": "new",
+    "description": "new1",
+    "kind": "entertainment",
+    "img": "https://www.hindustantimes.com/ht-img/img/2024/11/29/550x309/PTI11-28-2024-000339B-0_1732860805105_1732860816531.jpg",
+    "detail": "bouquet"
+  },
+  {
+    "id": "all",
+    "description": "all",
+    "kind": "all",
+    "img": "https://pixabay.com/photos/road-forest-fall-path-trail-trees-1072821/",
+    "detail": "all"
+  },
+  {
+    "id": "id",
+    "description": "Huge Cyclone ",
+    "kind": "all",
+    "img": "https://media.istockphoto.com/id/1550071750/photo/green-tea-tree-leaves-camellia-sinensis-in-organic-farm-sunlight-fresh-young-tender-bud.jpg?s=612x612&w=0&k=20&c=RC_xD5DY5qPH_hpqeOY1g1pM6bJgGJSssWYjVIvvoLw=",
+    "detail": "all"
+  },
+  {
+    "id": "hello",
+    "description": "hello",
+    "kind": "entertainment",
+    "img": "https://media.istockphoto.com/id/1550071750/photo/green-tea-tree-leaves-camellia-sinensis-in-organic-farm-sunlight-fresh-young-tender-bud.jpg?s=612x612&w=0&k=20&c=RC_xD5DY5qPH_hpqeOY1g1pM6bJgGJSssWYjVIvvoLw=",
+    "detail": "hello"
+  },
+  {
+    "id": "roja",
+    "description": "roja",
+    "kind": "all",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST8s3XFbrKvHZuAZVGxMgQo1fS-2gGQVq3ZaiBmQ3XSSn4g3dqYCZSl-Q&s",
+    "detail": "roja"
   }
 ]

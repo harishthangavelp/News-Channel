@@ -57,34 +57,23 @@ app.post('/update-news', (req, res) => {
 
 // Endpoint to add user data to `userDetails.json`
 app.post('/addNews', (req, res) => {
-    const newUser = req.body;
-  
-    // Path to the user JSON file
-    const filePath = path.join(__dirname, '../my-news-channel/src/Components/newsDetails.json');
-  
-    // Read current data
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      let userData = [];
-      if (!err && data) {
-        try {
-          userData = JSON.parse(data); // Parse existing data
-        } catch (parseError) {
-          console.error('Invalid JSON, resetting to empty array');
-        }
-      }
-  
-      // Add the new user entry
-      userData.push(newUser);
-  
-      // Write updated data
-      fs.writeFile(filePath, JSON.stringify(userData, null, 2), (writeErr) => {
-        if (writeErr) {
-          console.error(writeErr);
-          return res.status(500).json({ error: 'Failed to write user data' });
-        }
-        res.status(200).json({ message: 'User added successfully' });
-      });
+  const newNews = req.body; // Get data sent in the request body
+
+  // Read the current content of newsdetails.json
+  fs.readFile('newsdetails.json', 'utf8', (err, data) => {
+    if (err) return res.status(500).send('Error reading file');
+    
+    // Parse the existing news data and add the new entry
+    const newsArray = JSON.parse(data);
+    newsArray.push(newNews);
+
+    // Write the updated data back to newsdetails.json
+    fs.writeFile('newsdetails.json', JSON.stringify(newsArray, null, 2), (err) => {
+      if (err) return res.status(500).send('Error writing to file');
+      
+      res.status(200).send('News added successfully');
     });
+  });
 });
 
 // Google Sheets API route (for adding user to Google Sheets)

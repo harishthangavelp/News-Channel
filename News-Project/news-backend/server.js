@@ -42,6 +42,17 @@ app.post('/delete-news', (req, res) => {
   });
 });
 
+app.get('/getNews', (req, res) => {
+  const filePath = path.join(__dirname, '../my-news-channel/src/Components/newsDetails.json');
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading file:', err);
+      return res.status(500).send('Failed to read file.');
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
 
 app.post('/update-news', (req, res) => {
   const updatedData = req.body;
@@ -61,6 +72,7 @@ app.post('/addNews', (req, res) => {
 
   // Path to the user JSON file
   const filePath = path.join(__dirname, '../my-news-channel/src/Components/newsDetails.json');
+  console.log('Resolved file path:', filePath);
 
   // Read current data
   fs.readFile(filePath, 'utf8', (err, data) => {
@@ -79,11 +91,13 @@ app.post('/addNews', (req, res) => {
     // Write updated data
     fs.writeFile(filePath, JSON.stringify(userData, null, 2), (writeErr) => {
       if (writeErr) {
-        console.error(writeErr);
+        console.error('Error writing to file:', writeErr);
         return res.status(500).json({ error: 'Failed to write user data' });
       }
+      console.log('Data written to file successfully');
       res.status(200).json({ message: 'User added successfully' });
     });
+    
   });
 });
 

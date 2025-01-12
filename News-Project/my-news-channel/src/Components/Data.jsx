@@ -317,7 +317,7 @@ useEffect(() => {
 
     <div>
       <button
-        onClick={() => setIsModalVisible(true)} // Show modal on button click
+        onClick={handleNavigate} // Show modal on button click
         style={{
           width: '70px',
           height: '70px',

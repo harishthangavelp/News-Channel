@@ -89,7 +89,7 @@ app.post('/addNews', (req, res) => {
 
 // Google Sheets API route (for adding user to Google Sheets)
 const spreadsheetId = "1GrpES7bpeQjzSrRjtINNI_BIkG0MaUUgdgzQaY_kLZo";
-app.post("/addUserToSheet", async (req, res) => {
+app.post("/addUser", async (req, res) => {
     try {
         const { myname, username } = req.body;
 

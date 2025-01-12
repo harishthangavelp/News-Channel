@@ -21,7 +21,7 @@ function AddDataModal({ onSubmit, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://news-channel-14.onrender.com5000/addNews', {
+      const response = await fetch('https://news-channel-14.onrender.com/addNews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

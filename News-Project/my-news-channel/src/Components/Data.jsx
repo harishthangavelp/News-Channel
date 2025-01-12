@@ -74,7 +74,7 @@ const handleEditSubmit = async (e) => {
 
   // Save changes to the backend
   try {
-    const response = await fetch('http://localhost:5000/update-news', {
+    const response = await fetch('https://news-channel-14.onrender.com/update-news', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ const handleEditSubmit = async (e) => {
 
 const handleDelete = async (id) => {
   try {
-    const response = await fetch('http://localhost:5000/delete-news', {
+    const response = await fetch('https://news-channel-14.onrender.com/delete-news', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

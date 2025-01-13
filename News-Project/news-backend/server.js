@@ -9,10 +9,6 @@ const path = require('path');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-  next();
-});
 
 app.use(express.json());
 require('dotenv').config();
@@ -23,43 +19,6 @@ const client = new google.auth.JWT(
     process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"), // Replace escaped newlines
     ["https://www.googleapis.com/auth/spreadsheets"]
 );
-
-app.delete('/delete-news', (req, res) => {
-  const { id } = req.body; // Extract the ID from the request body
-
-  // Path to the JSON file
-  const filePath = path.join(__dirname, '../my-news-channel/src/Components/newsDetails.json');
-
-  // Read the current JSON file
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading file:', err);
-      return res.status(500).send('Failed to read the file.');
-    }
-
-    let newsData;
-    try {
-      newsData = JSON.parse(data);
-    } catch (parseError) {
-      console.error('Error parsing JSON:', parseError);
-      return res.status(500).send('Invalid JSON format.');
-    }
-
-    // Filter out the item with the given ID
-    const updatedData = newsData.filter((item) => item.id !== id);
-
-    // Write the updated data back to the JSON file
-    fs.writeFile(filePath, JSON.stringify(updatedData, null, 2), (writeErr) => {
-      if (writeErr) {
-        console.error('Error writing file:', writeErr);
-        return res.status(500).send('Failed to update the file.');
-      }
-
-      // Send a 204 status indicating successful deletion with no content
-      res.status(204).end();
-    });
-  });
-});
 
 
 app.post('/delete-news', (req, res) => {

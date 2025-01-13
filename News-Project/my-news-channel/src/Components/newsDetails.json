@@ -108,11 +108,11 @@
     "likes": 0
   },
   {
-    "id": "hello",
-    "description": "hello",
-    "kind": "entertainment",
-    "img": "https://media.istockphoto.com/id/1550071750/photo/green-tea-tree-leaves-camellia-sinensis-in-organic-farm-sunlight-fresh-young-tender-bud.jpg?s=612x612&w=0&k=20&c=RC_xD5DY5qPH_hpqeOY1g1pM6bJgGJSssWYjVIvvoLw=",
-    "detail": "hello",
+    "id": "ayalaan",
+    "description": "ayalaa",
+    "kind": "general",
+    "img": "https://content.tupaki.com/twdata/2023/0423/news/First-Look--SK-Arrives-With-Extra-Terrestrial-Friend-In--Ayalaan---1682319350-1434.jpg",
+    "detail": "minnale",
     "liked": false,
     "likes": 0
   }

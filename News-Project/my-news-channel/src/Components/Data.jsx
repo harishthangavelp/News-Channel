@@ -96,7 +96,7 @@ const handleEditSubmit = async (e) => {
 
 const handleDelete = async (id) => {
   try {
-    const response = await fetch('https://news-channel-14.onrender.com//delete-news', {
+    const response = await fetch('https://news-channel-14.onrender.com/delete-news', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

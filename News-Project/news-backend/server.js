@@ -13,15 +13,6 @@ app.use((req, res, next) => {
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   next();
 });
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  if (req.method === "OPTIONS") {
-    return res.status(204).end(); // No content for preflight
-  }
-  next();
-});
 
 app.use(express.json());
 require('dotenv').config();
@@ -55,8 +46,6 @@ app.post('/delete-news', (req, res) => {
     });
   });
 });
-
-
 
 
 app.post('/update-news', (req, res) => {

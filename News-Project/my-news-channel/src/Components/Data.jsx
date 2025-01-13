@@ -97,19 +97,16 @@ const handleEditSubmit = async (e) => {
 const handleDelete = async (id) => {
   try {
     const response = await fetch('https://news-channel-14.onrender.com/delete-news', {
-      method: 'DELETE', // Use DELETE instead of POST
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ id }), // Send the ID of the news item to delete
+      body: JSON.stringify({ id }),
     });
 
-    if (response.status === 204) {
-      // Handle the 204 status specifically
+    if (response.ok) {
       setCategory((prevCategory) => prevCategory.filter((item) => item.id !== id)); // Update the UI
       console.log('News item deleted successfully');
-    } else if (response.ok) {
-      console.log('News item deleted with another status code');
     } else {
       console.error('Failed to delete news item');
     }
@@ -117,7 +114,6 @@ const handleDelete = async (id) => {
     console.error('Error deleting news item:', error);
   }
 };
-
 
 
 
